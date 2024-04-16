@@ -69,3 +69,52 @@
         display: none;
     }
 }
+
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	position: fixed;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-success a {
+    color: #0c662e;
+    text-decoration: underline;
+}
+
+.alert-success a:hover {
+    color: #08401e;
+}
+
+
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 768px) {
+    .categories-wrapper {
+        overflow-x: scroll !important; /* Включаем горизонтальный скроллинг */
+        white-space: nowrap !important; /* Предотвращаем перенос текста на новую строку */
+    }
+
+    .categories-wrapper .nav-pills {
+        display: inline-block !important; /* Устанавливаем встроенный блочный дисплей */
+    }
+
+    .categories-wrapper .nav-item {
+        display: inline-block !important; /* Устанавливаем встроенный блочный дисплей для элементов списка */
+        margin-right: 10px !important; /* Добавляем немного отступа между элементами */
+    }
+}
+
+/* Скрыть на десктопе */
+@media (min-width: 768px) {
+	.menu_bar div ul{
+		justify-content: space-between;
+	}
+}

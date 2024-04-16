@@ -6,7 +6,11 @@
 <!-- main -->
 <main>
 	<div class="container">
-
+		@if(session('success'))
+			<div class="alert alert-success">
+				{{ session('success') }}
+			</div>
+		@endif
 		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators mb-1">
 			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -36,17 +40,27 @@
 	</div>
 	<div class="container">
 		<div>
-			<p class="menu fs-1 fw-bold" id="menu">Меню</p>
+			<p class="menu fs-1 fw-bold mb-1" id="menu">Меню</p>
 		</div>
 		<div class="menu_bar">
+			<div class="categories-wrapper">
+				<ul class="nav nav-pills d-flex">
+					@foreach ($category as $cat)
+						<li class="nav-item align-items-center fs-4 mb-2"><a href="javascript:void(0)" class="nav_bar2 text-decoration-none" onclick="scrollToAnchor('{{ $cat->name }}')">{{ $cat->name }}</a></li>
+					@endforeach
+				</ul>
+			</div>
+		</div>
+		{{-- <div class="menu_bar">
 			<ul class="nav nav-pills d-flex w-100 justify-content-between">
 				@foreach ($category as $cat)
-				<li class="nav-item align-items-center fs-4 mb-2"><a href="#{{ $cat->name }}" class="nav_bar2 text-decoration-none">{{ $cat->name }}</a></li>
+				<li class="nav-item align-items-center fs-4 mb-2"><a href="javascript:void(0)" class="nav_bar2 text-decoration-none" onclick="scrollToAnchor('{{ $cat->name }}')">{{ $cat->name }}</a></li>
 				@endforeach
 			</ul>
-		</div>
+		</div> --}}
 	</div>
 	<div class="container">
+		{{-- Категории --}}
 		@foreach ($category as $cat)
 		<div>
 			<p class="category fs-3 fw-bolder" id="{{ $cat->name }}">{{ $cat->name }}</p>
@@ -66,7 +80,7 @@
 								<input type="hidden" name="tovar_id" value={{ $item->id }}>
 								<input type="hidden" name="tovar_count" value=1>
 								<input class="in_card fw-bolder addToCartButton desktop" type="submit" value="В корзину" id="addToCartButton">
-								<input class="in_card fw-bolder addToCartButtonMobile mobile" type="submit" value="+" id="addToCartButton">
+								<input class="in_card fw-bolder addToCartButtonMobile mobile ps-2 pe-2" type="submit" value="+" id="addToCartButton">
 							</form>
 						</div>
 					</div>
@@ -105,6 +119,26 @@
 			}
 		</script>
 		@endif
-	
+		
+		<script>
+			function scrollToAnchor(anchorId) {
+				// Получаем элемент, к которому нужно прокрутиться
+				var target = document.getElementById(anchorId);
+
+				if (target) {
+					// Учитываем высоту хэдера (например, если его класс - header)
+					var headerHeight = document.querySelector('.sticky-top').offsetHeight;
+
+					// Вычисляем позицию прокрутки с учетом высоты хэдера
+					var offsetPosition = target.offsetTop - headerHeight;
+
+					// Прокручиваем страницу к нужному элементу с учетом смещения
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: "smooth" // Добавляет плавную анимацию
+					});
+				}
+			}
+		</script>
 </main>
 @endsection
