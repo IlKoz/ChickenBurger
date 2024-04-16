@@ -40,7 +40,7 @@ header {
 }
 
 
-.menu {
+.Bmenu {
     position: fixed;
     top: 0;
     left: 0;
@@ -50,31 +50,31 @@ header {
     display: none; /* По умолчанию скрыто */
     z-index: 999; /* Поднимаем поверх всего остального контента */
 }
-.menu2{
+.Bmenu2{
     height: 90%;
 }
 
-.menu ul {
+.Bmenu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.menu ul li {
+.Bmenu ul li {
     margin-bottom: 20px;
     text-align: right; /* Выравнивание по правому краю */
 }
 
-.menu ul li a {
+.Bmenu ul li a {
     color: white;
     text-decoration: none;
     font-size: 32px;
 }
 
-#menu {
+#Bmenu {
     display: none; /* Скрыть меню по умолчанию */
 }
 
-#menu.open {
+#Bmenu.open {
     display: block; /* Показать меню при наличии класса "open" */
 }
