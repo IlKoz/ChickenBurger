@@ -1,0 +1,100 @@
+/* main */
+
+main{
+	margin-top: 50px;
+}
+
+
+.menu{
+	font-weight: bold;
+	font-size: 48px;
+	margin-bottom: 30px;
+}
+
+.forma{
+	text-align: center;
+	
+}
+
+form{
+	margin-left: auto;
+    margin-right: auto;
+	width: 500px;
+
+	border-radius: 20px;
+	background: #FFF;
+	box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.form_header{
+	background: #D9D9D9;
+	border-radius: 20px 20px 0px 0px;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.name{
+	border-radius: 20px;
+	padding: 10px 15px;
+	width: 400px;
+	margin-bottom: 15px;
+
+}
+
+.opisanie{
+	border-radius: 20px;
+	padding: 10px 15px;
+	width: 400px;
+	margin-bottom: 15px;
+}
+
+.cena{
+	border-radius: 20px;
+	padding: 10px 15px;
+	width: 400px;
+	margin-bottom: 15px;
+}
+
+.category{
+	border-radius: 20px;
+	padding: 10px 15px;
+	width: 435px;
+	margin-bottom: 15px;
+}
+
+.form_footer{
+	background: #D9D9D9;
+	border-radius: 0px 0px 20px 20px;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.submit{
+	background: #d62222;
+	border-radius: 20px;
+	color: white;
+	padding: 5px 15px;
+}
+
+.submit:hover{
+	cursor: pointer;
+}
+
+.image{
+	background: #d62222;
+	border-radius: 20px;
+	color: white;
+	padding: 5px 15px;
+	margin-bottom: 15px;
+}
+
+
+.card_image{
+	/* background-color: aqua; */
+	margin: 5px auto;
+	width: 50%;
+}
+
+.tovar{
+	width: 100%;
+}

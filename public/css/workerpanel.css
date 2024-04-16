@@ -1,0 +1,125 @@
+/* main */
+
+main{
+	margin-top: 50px;
+}
+
+.menu{
+	font-weight: bold;
+	font-size: 48px;
+	margin-bottom: 30px;
+}
+
+.info{
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.name{
+	
+}
+
+
+
+.order {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.order h2 {
+    color: #333;
+}
+
+.order p {
+    margin: 5px 0;
+}
+
+.tovar, .coupon {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.tovar p, .coupon p {
+    margin: 5px 0;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.expected{
+	color: #3498db;
+}
+
+.preparing{
+	color: #f39c12;
+}
+
+.ready{
+	color: #4CAF50;
+}
+
+.taken{
+	color: #2ecc71;
+}
+
+.canceled{
+	color: #e74c3c;
+}
+
+
+
+
+
+.top{
+	display: flex;
+	justify-content: space-between;
+}
+
+.sprava{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+.submit{
+	border: none;
+	color: white;
+	padding: 10px;
+	background-color: #E40000;
+	border-radius: 10px;
+	align-items: center;
+  	justify-content: center;
+}
+
+.submit:hover{
+	cursor: pointer;
+}
+
+
+.tovar-image{
+	max-width: 100px;
+}
+
+.tovar{
+	display: flex;
+}
+
+.tovar_info{
+	/* display: flex; */
+  	align-items: center;
+  	justify-content: center;
+	margin: auto 25px;
+}
+
+.tovar_images{
+	align-items: center;
+  	justify-content: center;
+	margin: auto 0px;
+}

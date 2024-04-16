@@ -1,0 +1,71 @@
+.menu_bar a{
+	color: black;
+}
+.card-div{
+	color: black;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.25);
+	transition: 0.4s;
+}
+.card-div:hover{
+	transition: 0.4s;
+	box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.25);
+}
+.in_card{
+	background-color: #E40000;
+	color: white;
+	border-radius: 5px;
+	border: 0px;
+}
+
+
+/* Скрыть кнопку "В корзину" на мобильных устройствах */
+@media (max-width: 767px) {
+    .addToCartButton.desktop {
+        display: none;
+    }
+    .addToCartButtonMobile.mobile {
+        display: inline-block;
+    }
+}
+
+/* Скрыть кнопку "+" на десктопе */
+@media (min-width: 768px) {
+    .addToCartButtonMobile.mobile {
+        display: none;
+    }
+}
+
+
+
+
+
+/* Стили для иконки бургер-меню */
+.burger-icon {
+    cursor: pointer;
+}
+
+/* Скрытие списка ссылок на мобильных устройствах */
+.nav-links-mobile {
+    display: none;
+}
+
+/* Стили для бургер-меню */
+.burger-menu {
+    margin-right: 10px; /* Для отступа от логотипа */
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 991px) {
+    /* Показывать список ссылок для мобильных устройств */
+    .nav-links-mobile {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0; /* Убираем отступ у списка */
+    }
+
+    /* Скрыть список ссылок для десктопов */
+    .nav-links {
+        display: none;
+    }
+}

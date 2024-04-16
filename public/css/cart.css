@@ -1,0 +1,119 @@
+/* main */
+
+main{
+	margin-top: 50px;
+}
+
+.menu{
+	font-weight: bold;
+	font-size: 48px;
+	margin-bottom: 30px;
+}
+
+.info{
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.name{
+	
+}
+
+
+.tovars{
+	/* display: flex;
+	justify-content: space-between; */
+	display: grid;
+  	grid-gap: 50px;
+  	grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+	margin-bottom: 20px;
+}
+
+.a_card{}
+
+.cardd{
+	width: 234px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.25);
+	transition: 0.4s;
+}
+
+.card{
+	/* background-color: gray; */
+	
+}
+
+.cardd:hover{
+	transition: 0.4s;
+	box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.25);
+}
+
+.card_image{
+	/* background-color: aqua; */
+	margin: 15px;
+}
+
+.tovar{
+	width: 100%;
+	height: 100%;
+}
+
+.tovar_name{
+	text-align: center;
+}
+
+.tovar_info{
+	/* display: flex; */
+	justify-content: space-between;
+}
+
+.tovar_name{
+	margin-bottom: 20px;
+}
+
+.tovar_info{
+	margin-bottom: 20px;
+	margin: 15px;
+}
+
+.tovar_info2{
+	display: flex;
+	justify-content: space-between;
+}
+
+.in_card{
+	color: white;
+	background: #E40000;
+	border-radius: 4px;
+	padding: 5px 10px;
+	font-weight: bold;
+	font-size: 14px;
+	border: none;
+
+	margin-top: 10px;
+}
+
+.in_card:hover{
+	cursor: pointer;
+}
+
+.cena{
+	padding: 5px 10px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.fff{
+	display: flex;
+}
+
+.symma{
+	font-weight: bold;
+	font-size: 20px;
+
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+	margin-right: 25px;
+}

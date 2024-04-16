@@ -1,0 +1,120 @@
+/* main */
+
+main{
+	margin-top: 50px;
+}
+
+.menu{
+	font-weight: bold;
+	font-size: 48px;
+	margin-bottom: 30px;
+}
+
+.info{
+	/* display: flex; */
+	/* justify-content: space-between; */
+	
+}
+
+.adminpamell{
+	padding: 10px 15px;
+	background-color: #e23b28;
+	border-radius: 10px;
+	margin: 10px 0px;
+}
+
+.adminpamell-div{
+	margin: 15px 0px;
+}
+
+.submit{
+	padding: 10px 15px;
+	background-color: #e23b28;
+	border-radius: 10px;
+	margin: 10px 0px;
+}
+
+.submit:hover{
+	cursor: pointer;
+}
+
+.name{
+	font-weight: normal;
+	font-size: 18px;
+	margin: 5px 0px;
+}
+
+
+
+.order {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.order h2 {
+    color: #333;
+}
+
+.order p {
+    margin: 5px 0;
+}
+
+.tovar, .coupon {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.tovar p, .coupon p {
+    margin: 5px 0;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.expected{
+	color: #3498db;
+}
+
+.preparing{
+	color: #f39c12;
+}
+
+.ready{
+	color: #4CAF50;
+}
+
+.taken{
+	color: #2ecc71;
+}
+
+.canceled{
+	color: #e74c3c;
+}
+
+
+.tovar-image{
+	max-width: 100px;
+}
+
+.tovar{
+	display: flex;
+}
+
+.tovar_info{
+	/* display: flex; */
+  	align-items: center;
+  	justify-content: center;
+	margin: auto 25px;
+}
+
+.tovar_images{
+	align-items: center;
+  	justify-content: center;
+	margin: auto 0px;
+}
