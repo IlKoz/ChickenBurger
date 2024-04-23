@@ -1,156 +1,74 @@
-/* main */
-
-main{
-	margin-top: 50px;
+.menu_bar a{
+	color: black;
 }
-
-.baners{
-	display: flex;
-	justify-content: space-between
-}
-.banner{
-	display: flex;
-	margin: 0px 5px;
-	width: 100%;
-	max-width: 530px;
-	margin-bottom: 15px;
-	
-}
-
-
-.menu{
-	font-weight: bold;
-	font-size: 48px;
-	margin-bottom: 15px;
-}
-
-.menu_bar{
-	text-align: center;
-}
-
-.menu_bar ul{
-	list-style: none;
-	display: flex;
-	justify-content: space-between;
-}
-
-.menu_bar li{
-	display: inline-block;
-	margin-bottom: 15px;
-}
-
-.nav_bar2{
-	font-size: 18px;
-}
-
-
-.category{
-	font-size: 24px;
-	font-weight: 500;
-
-	margin-bottom: 20px;
-}
-
-.menu::before{
-	display: block;
-	content: "";
-	height: 55px;
-	margin: -55px 0 0;
-}
-
-.category::before{
-	display: block;
-	content: "";
-	height: 55px;
-	margin: -55px 0 0;
-}
-
-.tovars{
-	/* display: flex;
-	justify-content: space-between; */
-	display: grid;
-  	grid-gap: 50px;
-  	grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
-	margin-bottom: 20px;
-}
-
-.a_card{}
-
-.cardd{
-	width: 234px;
+.card-div{
+	color: black;
 	border-radius: 20px;
 	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.25);
 	transition: 0.4s;
 }
-
-.cardd::before {
-    content: "";
-    display: block;
-    height: 55px; /* Высота вашего ::before */
-    position: absolute;
-    top: -55px; /* Отрицательный отступ для компенсации */
-    width: 100%;
-    z-index: -1;
-}
-
-.card{
-	/* background-color: gray; */
-	
-}
-
-.cardd:hover{
+.card-div:hover{
 	transition: 0.4s;
 	box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.25);
 }
-
-.card_image{
-	/* background-color: aqua; */
-	margin: 15px;
-}
-
-.tovar{
-	width: 100%;
-	height: 100%;
-}
-
-.tovar_name{
-	text-align: center;
-}
-
-.tovar_info{
-	display: flex;
-	justify-content: space-between;
-}
-
-.tovar_name{
-	margin-bottom: 20px;
-}
-
-.tovar_info{
-	margin-bottom: 20px;
-	margin: 15px;
-}
-
 .in_card{
+	background-color: #E40000;
 	color: white;
-	background: #E40000;
-	border-radius: 4px;
-	padding: 5px 10px;
-	font-weight: bold;
-	font-size: 16px;
-	border: none;
+	border-radius: 5px;
+	border: 0px;
 }
 
-.in_card:hover{
-	cursor: pointer;
+
+/* Скрыть кнопку "В корзину" на мобильных устройствах */
+@media (max-width: 767px) {
+    .addToCartButton.desktop {
+        display: none;
+    }
+    .addToCartButtonMobile.mobile {
+        display: inline-block;
+    }
 }
 
-.cena{
-	padding: 5px 10px;
-	font-weight: bold;
-	font-size: 16px;
+/* Скрыть кнопку "+" на десктопе */
+@media (min-width: 768px) {
+    .addToCartButtonMobile.mobile {
+        display: none;
+    }
 }
 
+
+
+
+
+/* Стили для иконки бургер-меню */
+.burger-icon {
+    cursor: pointer;
+}
+
+/* Скрытие списка ссылок на мобильных устройствах */
+.nav-links-mobile {
+    display: none;
+}
+
+/* Стили для бургер-меню */
+.burger-menu {
+    margin-right: 10px; /* Для отступа от логотипа */
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 991px) {
+    /* Показывать список ссылок для мобильных устройств */
+    .nav-links-mobile {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0; /* Убираем отступ у списка */
+    }
+
+    /* Скрыть список ссылок для десктопов */
+    .nav-links {
+        display: none;
+    }
+}
 
 
 .alert {
@@ -174,4 +92,29 @@ main{
 
 .alert-success a:hover {
     color: #08401e;
+}
+
+
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 768px) {
+    .categories-wrapper {
+        overflow-x: scroll !important; /* Включаем горизонтальный скроллинг */
+        white-space: nowrap !important; /* Предотвращаем перенос текста на новую строку */
+    }
+
+    .categories-wrapper .nav-pills {
+        display: inline-block !important; /* Устанавливаем встроенный блочный дисплей */
+    }
+
+    .categories-wrapper .nav-item {
+        display: inline-block !important; /* Устанавливаем встроенный блочный дисплей для элементов списка */
+        margin-right: 10px !important; /* Добавляем немного отступа между элементами */
+    }
+}
+
+/* Скрыть на десктопе */
+@media (min-width: 768px) {
+	.menu_bar div ul{
+		justify-content: space-between;
+	}
 }

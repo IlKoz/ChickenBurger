@@ -18,6 +18,9 @@ header .btns a{
 header a:hover{
 	color: black;
 }
+header .btns a:hover{
+	color: white;
+}
 header {
 	background-color: white;
 }
@@ -77,4 +80,8 @@ header {
 
 #Bmenu.open {
     display: block; /* Показать меню при наличии класса "open" */
+}
+
+main {
+	min-height: 62vh;
 }
