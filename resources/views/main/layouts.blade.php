@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="/css/testheader.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="icon" href="{{ asset('image/favicon.png') }}" type="image/x-icon">
 	<title>@yield('title')</title>
 </head>
 <body>

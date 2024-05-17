@@ -49,7 +49,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #E40000;; /* Полупрозрачный фон */
+    background-color: #E40000; /* Полупрозрачный фон */
     display: none; /* По умолчанию скрыто */
     z-index: 999; /* Поднимаем поверх всего остального контента */
 }
@@ -84,4 +84,58 @@ header {
 
 main {
 	min-height: 62vh;
+}
+
+.underline-one {
+	color: #00bfff; /* Цвет обычной ссылки */
+    position: relative;
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+.underline-one:after {
+	content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: #E40000; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.underline-one:hover:after {
+	content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: #E40000; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s;  /* Время эффекта */
+}
+
+.hover-zoom {
+    display: inline-block;
+    /* overflow: hidden; */
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.1);
+}
+
+
+
+.count_cart{
+	background-color: #E40000;
+	color: white;
+	border-radius: 50px;
+	padding: 0px 8px;
+	font-size: 16px;
+	position: relative;
+	left: -20px;
+	top: -10px;
+	border: white solid 3px;
 }

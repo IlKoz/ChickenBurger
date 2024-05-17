@@ -18,7 +18,7 @@
 				@foreach ($coupon as $item)
 				<div class="pt-2 pb-2 col-md-4 col-12 d-flex flex-column">
 					<a href="{{ route('coupons.show', ['coupon' => $item->id]) }}" class="text-decoration-none">
-						<div class="align-items-center m-1 p-4 card-div">
+						<div class="align-items-center m-1 p-4 card-div hover-zoom">
 							<div class="card_image text-center"><img src="{{ asset('/storage/couponimages/' . $item->image) }}" alt="coupon" class="tovar" width="100%"></div>
 							<div><p class="tovar_name text-center mb-5 fs-5">{{ $item->name }}</p></div>
 							<div><p class="tovar_description text-center mb-5 fs-5">{{ $item->description }}</p></div>
@@ -50,4 +50,13 @@
 			}, 3000);
 		});
 	</script>
+	@if(session('scrollTo'))
+	<script>
+		   // Прокрутка к элементу с указанным идентификатором
+		   var element = document.getElementById('{{ session('scrollTo') }}');
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	</script>
+	@endif
 @endsection

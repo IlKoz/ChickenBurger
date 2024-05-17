@@ -2,11 +2,7 @@
 
 
 
-.menu{
-	font-weight: bold;
-	font-size: 48px;
-	margin-bottom: 30px;
-}
+
 
 .info{
 	/* display: flex; */
@@ -25,7 +21,7 @@
 	margin: 15px 0px;
 }
 
-.submit{
+/* .submit{
 	padding: 10px 15px;
 	background-color: #e23b28;
 	border-radius: 10px;
@@ -36,6 +32,13 @@
 
 .submit:hover{
 	cursor: pointer;
+} */
+
+.exit_btn{
+	background-color: #e23b28;
+	color: white;
+	border: none;
+	border-radius: 20px;
 }
 
 .name{

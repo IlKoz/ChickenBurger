@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/css/profile.css">
 	<div class="container">
 		<div>
-			<p class="menu">Профиль</p>
+			<p class="menu fs-1 fw-bold mb-1">Профиль</p>
 		</div>
 		<div class="info">
 			@if(session()->has('user_data'))
@@ -21,22 +21,22 @@
 			@endif
 			@if(auth()->user()->role === 'admin')
 			<div class="adminpamell-div">
-				<a class="adminpamell" href="{{ route('adminpanel.index') }}">Админ-панель</a>
+				<a class="adminpamell p-1 ps-3 pe-3 fw-bold hover-zoom text-decoration-none text-white" href="{{ route('adminpanel.index') }}">Админ-панель</a>
 			</div>
 			@elseif(auth()->user()->role === 'worker')
 			<div class="adminpamell-div">
-				<a class="adminpamell" href="{{ route('workerpanel.index') }}">Панель-работника</a>
+				<a class="adminpamell p-1 ps-3 pe-3 fw-bold hover-zoom" href="{{ route('workerpanel.index') }}">Панель-работника</a>
 			</div>
 			@endif
 			@auth
 				<form method="POST" action="{{ route('logout') }}">
 					@csrf
-					<button class="submit" type="submit">Выход</button>
+					<button class="submit p-1 ps-3 pe-3 fw-bold hover-zoom exit_btn" type="submit">Выход</button>
 				</form>
 			@endauth
 		</div>
 		<div>
-			<p class="menu">Заказы</p>
+			<p class="menu fs-1 fw-bold mb-1">Заказы</p>
 		</div>
 		@forelse ($orders as $order)
 			<div class="order">

@@ -32,3 +32,17 @@
 .burger-menu {
     margin-right: 10px; /* Для отступа от логотипа */
 }
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	position: fixed;
+	width: 70%;
+}
+@media (max-width: 768px) {
+    .alert {
+        width: 92%;
+    }
+}

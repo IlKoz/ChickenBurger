@@ -113,6 +113,7 @@ main{
 
 .info_price{
 	display: flex;
+	min-width: 7%;
 }
 
 .tovar_price{

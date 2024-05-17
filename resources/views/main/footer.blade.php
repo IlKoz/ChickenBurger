@@ -11,25 +11,29 @@
 			<div class="row mb-3">
 				<div class="p-2 col-md-3 col-6 d-flex flex-column text-center">
 					<h5>Компания</h5>
-					<a href="#">О нас</a>
-					<a href="#">Мы на карте</a>
-					<a href="#">Работа у нас</a>
+					<a href="#"><span class="underline-one text-black">О нас</span></a>
+					<a href="{{ route('main.map') }}"><span class="underline-one text-black">Мы на карте</span></a>
+					<a href="#"><span class="underline-one text-black">Работа у нас</span></a>
 				</div>
 				<div class="p-2 col-md-3 col-6 d-flex flex-column text-center">
 					<h5>Клиентам</h5>
-					<a href="#">Меню</a>
-					<a href="#">Акции</a>
-					<a href="#">Купоны</a>
+					<a href="{{ route('main.index') }}#menu"><span class="underline-one text-black">Меню</span></a>
+					<a href="{{ route('main.promo') }}"><span class="underline-one text-black">Акции</span></a>
+					<a href="{{ route('coupons.index') }}"><span class="underline-one text-black">Купоны</span></a>
 				</div>
 				<div class="p-2 col-md-3 col-6 d-flex flex-column text-center">
 					<h5>Мы рядом</h5>
 					<a href="#" class="d-flex align-items-center justify-content-center">
-						<img src="/image/imgvk.png" alt="" width="16px" class="me-1 align-self-center">
-						<p class="m-0 align-self-center">Вконтакте</p>
+						<span class="d-flex align-items-center justify-content-center underline-one text-black">
+							<img src="/image/imgvk.png" alt="" width="16px" class="me-1 align-self-center">
+							<p class="m-0 align-self-center">Вконтакте</p>
+						</span>
 					</a>
 					<a href="#" class="d-flex align-items-center justify-content-center">
-						<img src="/image/imgtg.png" alt="" width="16px" class="me-1 align-self-center">
-						<p class="m-0 align-self-center">Телеграм</p>
+						<span class="d-flex align-items-center justify-content-center underline-one text-black">
+							<img src="/image/imgtg.png" alt="" width="16px" class="me-1 align-self-center">
+							<p class="m-0 align-self-center">Телеграм</p>
+						</span>
 					</a>
 				</div>
 				<div class="p-2 col-md-3 col-6 d-flex flex-column text-center">

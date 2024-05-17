@@ -7,10 +7,10 @@
 <main>
 	<div class="container">
 		@if(session('success'))
-			<div class="alert alert-success">
-				{{ session('success') }}
-			</div>
-		@endif
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+   		@endif
 		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators mb-1">
 			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -62,7 +62,7 @@
 			@foreach ($cat->tovars as $item)
 			<div class="pt-2 pb-2 col-md-3 col-6 d-flex flex-column" id="{{ $item->id }}">
 				<a href="{{ route('main.show', ['tovar' => $item->id]) }}" class="a_card text-decoration-none">
-					<div class="align-items-center m-1 p-4 card-div">
+					<div class="align-items-center m-1 p-4 card-div hover-zoom">
 						<div class="card_image text-center"><img src="{{ asset('/storage/tovarimages/' . $item->image) }}" alt="tovar" class="tovar" width="100%"></div>
 						<div><p class="tovar_name text-center mb-5 fs-5">{{ $item->name }}</p></div>
 						<div class="tovar_info d-flex justify-content-between">
@@ -89,11 +89,6 @@
 
 		<link rel="stylesheet" href="/css/main.css">
 		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-		@if(session('success'))
-			<div class="alert alert-success">
-				{{ session('success') }}
-			</div>
-		@endif
 		<script>
 			// Поиск элемента с классом .alert и скрытие его через 3 секунды
 			$(document).ready(function() {

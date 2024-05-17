@@ -1,4 +1,4 @@
-<header class="sticky-top p-1">
+<header class="sticky-top p-1 shadow mb-4">
 	<div class="container">
 		<div class="d-flex flex-wrap mb-2 justify-content-between desctop">
 			{{-- Левая часть хедера --}}
@@ -12,10 +12,10 @@
 				</div>
                 <!-- Список ссылок -->
                 <ul class="nav nav-pills nav-links d-none d-lg-flex">
-					<li class="nav-item me-5 fs-5"><a href="{{ route('main.index') }}#menu" class="nav_bar">Меню</a></li>
-                    <li class="nav-item me-5 fs-5"><a href="{{ route('coupons.index') }}" class="nav_bar">Купоны</a></li>
-                    <li class="nav-item me-5 fs-5"><a href="{{ route('main.promo') }}" class="nav_bar">Акции</a></li>
-                    <li class="nav-item me-5 fs-5"><a href="{{ route('main.map') }}" class="nav_bar">Рестораны</a></li>
+					<li class="nav-item me-5 fs-5 underline-one"><a href="{{ route('main.index') }}#menu" class="nav_bar">Меню</a></li>
+                    <li class="nav-item me-5 fs-5 underline-one"><a href="{{ route('coupons.index') }}" class="nav_bar">Купоны</a></li>
+                    <li class="nav-item me-5 fs-5 underline-one"><a href="{{ route('main.promo') }}" class="nav_bar">Акции</a></li>
+                    <li class="nav-item me-5 fs-5 underline-one"><a href="{{ route('main.map') }}" class="nav_bar">Рестораны</a></li>
                 </ul>
 			</div>
 			<!-- Иконка бургер-меню -->
@@ -74,25 +74,42 @@
 			</div>
 			<div class="d-flex align-items-center d-none d-lg-flex btns">
 				<ul class="nav nav-pills">
-					<li class="nav-item align-items-center me-5 fs-5">
+					<?php
+						$userCart = session('user_cart', []);
+						$userCartCoupons = session('user_cart_coupons', []);
+
+						$totalItemCount = 0;
+
+						foreach($userCart as $tovarData) {
+							$totalItemCount += $tovarData['tovar_count'];
+						}
+
+						foreach($userCartCoupons as $tovarData) {
+							$totalItemCount += $tovarData['coupon_count'];
+						}
+						?>
+					<li class="nav-item align-items-center me-5 fs-5 hover-zoom d-flex">
 						<a href="{{ route('cart.show') }}" class="d-flex align-items-center qwe">
 							<img src="/image/cart_white.png" alt="" width="20px" height="20px" class="me-1">
 							<p class="nav_bar korzina_p m-0">Корзина</p>
 						</a>
+						@if ($totalItemCount !== 0)
+						<p class="nav_bar korzina_p m-0 count_cart">{{ $totalItemCount }}</p>
+						@endif
 					</li>
 					{{-- Если пользователь авторизован, отобразить ссылку на профиль --}}
 					@if(auth()->check())
-					<li class="nav-item align-items-center me-5 fs-5">
+					<li class="nav-item align-items-center me-5 fs-5 hover-zoom">
 						<a href="{{ route('dashboard') }}" class="d-flex align-items-center qwe">
 							<img src="/image/profile_white.png" alt="" width="20px" height="20px" class="me-1">
 							<p class="nav_bar profile_p m-0">Профиль</p>
 						</a>
 					</li>
 					@else
-					<li class="nav-item align-items-center fs-5">
+					<li class="nav-item align-items-center fs-5 hover-zoom">
 						<a href="{{ route('login') }}" class="d-flex align-items-center qwe">
 							<img src="/image/profile_white.png" alt="" width="20px" height="20px" class="me-1">
-							<p class="nav_bar login_p m-0">Профиль</p>
+							<p class="nav_bar login_p m-0">Логин</p>
 						</a>
 					</li>
 					@endif

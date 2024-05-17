@@ -128,74 +128,36 @@ main{
 
 
 
-
-.tovars2{
-	/* display: flex;
-	justify-content: space-between; */
-	display: grid;
-  	grid-gap: 50px;
-  	grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
-	margin-bottom: 20px;
-}
-
-.a_card2{}
-
-.cardd2{
-	width: 234px;
+.card-div{
+	color: black;
 	border-radius: 20px;
 	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.25);
 	transition: 0.4s;
 }
-
-.card2{
-	/* background-color: gray; */
-	
-}
-
-.cardd2:hover{
+.card-div:hover{
 	transition: 0.4s;
 	box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.25);
 }
-
-.card_image2{
-	/* background-color: aqua; */
-	margin: 15px;
-}
-
-.tovar2{
-	width: 100%;
-	height: 100%;
-}
-
-.tovar_name2{
-	text-align: center;
-}
-
-.tovar_info2{
-	display: flex;
-	justify-content: space-between;
-}
-
-.tovar_name2{
-	margin-bottom: 20px;
-}
-
-.tovar_info2{
-	margin-bottom: 20px;
-	margin: 15px;
-}
-
-.in_card2{
+.in_card{
+	background-color: #E40000;
 	color: white;
-	background: #E40000;
-	border-radius: 4px;
-	padding: 5px 10px;
-	font-weight: bold;
-	font-size: 16px;
+	border-radius: 5px;
+	border: 0px;
 }
 
-.cena2{
-	padding: 5px 10px;
-	font-weight: bold;
-	font-size: 16px;
+/* Скрыть кнопку "В корзину" на мобильных устройствах */
+@media (max-width: 767px) {
+    .addToCartButton.desktop {
+        display: none;
+    }
+    .addToCartButtonMobile.mobile {
+        display: inline-block;
+    }
+}
+
+/* Скрыть кнопку "+" на десктопе */
+@media (min-width: 768px) {
+    .addToCartButtonMobile.mobile {
+        display: none;
+    }
 }

@@ -59,8 +59,11 @@ class CouponsController extends Controller
 		// Сохраняем обновленные данные корзины в сессии
 		session()->put('user_cart_coupons', $userCart);
 
+		$cart = $couponId;
+
 		// return redirect()->back();
-		return redirect()->back()->with('success', 'Купон успешно добавлен в корзину!');
+		// return redirect()->back()->with('success', 'Купон успешно добавлен в корзину!');
+		return redirect()->back()->with('scrollTo', $cart)->with('success', 'Товар успешно добавлен в корзину!');
 			
 	}
 
