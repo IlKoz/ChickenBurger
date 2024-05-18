@@ -172,6 +172,12 @@
 							<input type="hidden" name="tovars" value="{{ json_encode($userCart) }}">
 							<input type="hidden" name="coupons" value="{{ json_encode($userCartCoupons) }}">
 							<input type="hidden" name="price" value="{{ $totalPrice + $totalPriceCoupons }}">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="oplata1" id="flexCheckCheckedDisabled" checked disabled>
+								<label class="form-check-label" for="flexCheckCheckedDisabled">
+								  Оплата при получении заказа
+								</label>
+							  </div>
 							<input class="in_card" type="submit" value="Оформить заказ">
 						</form>
 					</div>
