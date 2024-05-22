@@ -5,7 +5,7 @@
 			<div class="d-flex justify-content-center">
 				<a href="{{ route('main.index') }}" class="a_logo d-flex align-items-center mb-3">
 					<img src="/image/icon.png" alt="logo" class="logo me-2" width="40px">
-					<h1 class="m-0">Chicken Burger</h1>
+					<h1 class="m-0 chick_foot">Chicken Burger</h1>
 				</a>
 			</div>
 			<div class="row mb-3">
@@ -60,4 +60,61 @@
 			</div>
 		</div>
 	</div>
+	<style>
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            z-index: 1000;
+        }
+        .bottom-nav .nav-link {
+            color: #000;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .bottom-nav .nav-link:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+	<!-- Bottom Navigation Bar -->
+<nav class="bottom-nav d-block d-md-none">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col">
+                <a href="{{ route('main.index') }}#menu" class="nav-link">
+					<i class="fa fa-utensils"></i>
+                    <span>Меню</span>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{{ route('main.promo') }}" class="nav-link">
+                    <i class="fa fa-tags"></i>
+                    <span>Акции</span>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{{ route('cart.show') }}" class="nav-link">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Корзина</span>
+                </a>
+            </div>
+			<div class="col">
+                <a href="{{ route('coupons.index') }}" class="nav-link">
+					<i class="fa fa-ticket-alt"></i>
+                    <span>Купоны</span>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{{ route('dashboard') }}" class="nav-link">
+                    <i class="fa fa-user"></i>
+                    <span>Профиль</span>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</nav>
 </footer>

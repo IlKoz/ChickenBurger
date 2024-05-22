@@ -33,23 +33,26 @@
 						<ul class="nav nav-pills nav-links-mobile d-lg-none">
 							<li class="nav-item fs-5">
 								<a href="{{ route('cart.show') }}" class="d-flex align-items-center">
-									<img src="/image/cart_white.png" alt="" width="32px" height="32px" class="me-2">
-									<p class="nav_bar korzina_p m-0">Корзина</p>
+									{{-- <img src="/image/cart_white.png" alt="" width="32px" height="32px" class="me-2"> --}}
+									<i class="fa fa-shopping-cart"></i>
+									<p class="nav_bar korzina_p m-0 ms-3">Корзина</p>
 								</a>
 							</li>
 							{{-- Если пользователь авторизован, отобразить ссылку на профиль --}}
 							@if(auth()->check())
 							<li class="nav-item fs-5">
 								<a href="{{ route('dashboard') }}" class="d-flex align-items-center">
-									<img src="/image/profile_white.png" alt="" width="32px" height="32px" class="me-2">
-									<p class="nav_bar profile_p m-0">Профиль</p>
+									{{-- <img src="/image/profile_white.png" alt="" width="32px" height="32px" class="me-2"> --}}
+									<i class="fa fa-user"></i>
+									<p class="nav_bar profile_p m-0 ms-3">Профиль</p>
 								</a>
 							</li>
 							@else
 							<li class="nav-item fs-5">
 								<a href="{{ route('login') }}" class="d-flex align-items-center">
-									<img src="/image/profile_white.png" alt="" width="32px" height="32px" class="me-2">
-									<p class="nav_bar login_p m-0">Профиль</p>
+									{{-- <img src="/image/profile_white.png" alt="" width="32px" height="32px" class="me-2"> --}}
+									<i class="fa fa-user"></i>
+									<p class="nav_bar login_p m-0 ms-3">Профиль</p>
 								</a>
 							</li>
 							@endif

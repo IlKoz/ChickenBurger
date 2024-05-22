@@ -77,11 +77,11 @@
     border: 1px solid transparent;
     border-radius: 4px;
 	position: fixed;
-	width: 70%;
+	width: 69%;
 }
 @media (max-width: 768px) {
     .alert {
-        width: 92%;
+        width: 93%;
     }
 }
 

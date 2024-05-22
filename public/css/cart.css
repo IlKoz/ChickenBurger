@@ -27,8 +27,31 @@
 	background-color: #E40000 !important;
 }
 
+@media (max-width: 767px) {
+	.form_oformit{
+	
+	}
+    .oformit{
+		
+	}
+}
 
+/* Скрыть кнопку "В корзину" на мобильных устройствах */
+@media (max-width: 767px) {
+    .addToCartButton.desktop {
+        display: none;
+    }
+    .addToCartButtonMobile.mobile {
+        display: inline-block;
+    }
+}
 
+/* Скрыть кнопку "+" на десктопе */
+@media (min-width: 768px) {
+    .addToCartButtonMobile.mobile {
+        display: none;
+    }
+}
 
 /* .info{
 	display: flex;

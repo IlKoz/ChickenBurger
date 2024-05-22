@@ -6,6 +6,11 @@
 <!-- main -->
 <main>
 	<div class="container">
+		<style>
+			.alert{
+				z-index: 1050;
+			}
+		</style>
 		@if(session('success'))
         <div class="alert alert-success" role="alert">
             {{ session('success') }}
@@ -42,7 +47,7 @@
 		<div>
 			<p class="menu fs-1 fw-bold mb-1" id="menu">Меню</p>
 		</div>
-		<div class="menu_bar">
+		<div class="menu_bar mb-2">
 			<div class="categories-wrapper">
 				<ul class="nav nav-pills d-flex">
 					@foreach ($category as $cat)
@@ -55,16 +60,79 @@
 	<div class="container">
 		@foreach ($category as $cat)
 		<div>
-			<p class="category fs-3 fw-bolder" id="{{ $cat->name }}">{{ $cat->name }}</p>
+			<p class="category fs-3 fw-bolder mb-0" id="{{ $cat->name }}">{{ $cat->name }}</p>
 		</div>
 		
-		<div class="row mb-3 tovars">
+		<style>
+			/* .card_image{
+				min-height: 30vh;
+				display: flex;
+			}
+			.tovar_name{
+				min-height: 90px;
+			}
+			@media (max-width: 767px) {
+				.card_image{
+					min-height: 15vh;
+					display: flex;
+				}
+				.tovar_name{
+					min-height: 9vh;
+				}
+			} */
+
+
+			.card-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.card_image {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Соотношение сторон 4:3 */
+}
+
+.card_image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tovar_name {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tovar_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+
+
+
+
+			
+		</style>
+
+		{{-- <div class="row mb-3 tovars">
 			@foreach ($cat->tovars as $item)
-			<div class="pt-2 pb-2 col-md-3 col-6 d-flex flex-column" id="{{ $item->id }}">
+			<div class="pt-2 pb-2 col-md-3 col-6 d-flex flex-column align-items-stretch" id="{{ $item->id }}">
 				<a href="{{ route('main.show', ['tovar' => $item->id]) }}" class="a_card text-decoration-none">
 					<div class="align-items-center m-1 p-4 card-div hover-zoom">
-						<div class="card_image text-center"><img src="{{ asset('/storage/tovarimages/' . $item->image) }}" alt="tovar" class="tovar" width="100%"></div>
-						<div><p class="tovar_name text-center mb-5 fs-5">{{ $item->name }}</p></div>
+						<div class="card_image text-center mb-2"><img src="{{ asset('/storage/tovarimages/' . $item->image) }}" alt="tovar" class="tovar" width="100%"></div>
+						<div><p class="tovar_name text-center fs-5">{{ $item->name }}</p></div>
 						<div class="tovar_info d-flex justify-content-between">
 							<p class="cena m-0 fw-bold fs-4">{{ $item->price }} ₽</p>
 							<form action="{{ route('cart.create') }}" method="post" id="addToCartForm" class="d-flex flex-column justify-content-center align-items-center">
@@ -79,7 +147,41 @@
 				</a>
 			</div>
 			@endforeach 
+		</div> --}}
+
+		
+		<div class="row mb-3 tovars">
+			@foreach ($cat->tovars as $item)
+			<div class="pt-2 pb-2 col-md-3 col-6 d-flex" id="{{ $item->id }}">
+				<div class="w-100 d-flex flex-column h-100">
+					<a href="{{ route('main.show', ['tovar' => $item->id]) }}" class="a_card text-decoration-none d-flex flex-column h-100">
+						<div class=" m-1 p-4 card-div hover-zoom d-flex flex-column h-100">
+							<div class="card_image text-center mb-2">
+								<img src="{{ asset('/storage/tovarimages/' . $item->image) }}" alt="tovar" class="tovar img-fluid">
+							</div>
+							<div class="d-flex flex-column flex-grow-1">
+								<p class="tovar_name text-center fs-5">{{ $item->name }}</p>
+							</div>
+							<div class="tovar_info d-flex justify-content-between align-items-center mt-auto">
+								<p class="cena m-0 fw-bold fs-4">{{ $item->price }} ₽</p>
+								<form action="{{ route('cart.create') }}" method="post" id="addToCartForm" class="d-flex flex-column justify-content-center align-items-center">
+									@csrf
+									<input type="hidden" name="tovar_id" value="{{ $item->id }}">
+									<input type="hidden" name="tovar_count" value="1">
+									<input class="in_card fw-bolder addToCartButton desktop" type="submit" value="В корзину" id="addToCartButton">
+									<input class="in_card fw-bolder addToCartButtonMobile mobile ps-2 pe-2" type="submit" value="+" id="addToCartButton">
+								</form>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			@endforeach
 		</div>
+		
+		
+		
+		
 		@endforeach 
 	</div>
 		

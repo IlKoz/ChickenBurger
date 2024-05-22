@@ -22,37 +22,140 @@
 					<p class="menu fs-1 fw-bold mb-1">Товары:</p>
 				</div>
 
+				<style>
+
+.card-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 1rem; /* Общий внутренний отступ */
+}
+
+.card_image {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+}
+
+.card_image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tovar_name {
+    margin-bottom: 1rem; /* Отступ снизу для имени товара */
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tovar_info {
+    margin-top: auto;
+    padding: 1rem 0; /* Вертикальные отступы для .tovar_info */
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+}
+
+.tovar_info .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem; /* Увеличенный отступ снизу для каждой строки */
+}
+
+.tovar_info .d-flex .cena {
+    flex: 1;
+    margin: 0 1rem; /* Увеличенные отступы для цены */
+}
+
+.tovar_info .d-flex form {
+    flex: 1;
+    margin: 0 1rem; /* Увеличенные отступы для форм */
+}
+
+.cena {
+    margin-bottom: 1rem; /* Увеличенный отступ снизу для цены */
+}
+
+@media (max-width: 768px) {
+    .tovars .tovar_info {
+        align-items: flex-start;
+    }
+    .tovars .tovar_info .d-flex {
+        flex-direction: column;
+        width: 100%;
+    }
+    .tovars .tovar_info .d-flex .cena {
+        margin-bottom: 0.5rem;
+    }
+    .tovars .tovar_info .d-flex form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    .tovars .tovar_info .d-flex form input.in_card {
+        width: 100%;
+    }
+    
+    .tovars .tovar_name {
+        margin: 0px !important;
+    }
+    .cena {
+        text-align: center;
+    }
+}
+
+
+
+
+
+				</style>
 				<div class="row mb-3 tovars">
 					@foreach($userCart as $tovarId => $tovarData)
-					<div class="pt-2 pb-2 col-md-3 col-6 d-flex flex-column" id="{{ $tovarId }}">
-						<a href="{{ route('main.show', ['tovar' => $tovarId]) }}" class="a_card text-decoration-none">
-							<div class="align-items-center m-1 p-4 card-div">
-								<div class="card_image text-center"><img src="{{ asset('/storage/tovarimages/' . $tovarData['tovar_image']) }}" alt="tovar" class="tovar" width="100%"></div>
-								<div><p class="tovar_name text-center mb-5 fs-5">{{ $tovarData['tovar_name'] }}</p></div>
-								<div class="tovar_info">
-									<div class="d-flex justify-content-between mb-2">
-										<p class="cena m-0 fw-bold fs-4">{{ $tovarData['tovar_price'] }} ₽</p>
-										<p class="cena m-0 fw-bold fs-4">Кол-во: {{ $tovarData['tovar_count'] }}</p>
+					<div class="pt-2 pb-2 col-md-3 col-6 d-flex" id="{{ $tovarId }}">
+						<div class="w-100 d-flex flex-column h-100">
+							<a href="{{ route('main.show', ['tovar' => $tovarId]) }}" class="a_card text-decoration-none d-flex flex-column h-100">
+								<div class="align-items-center m-1 p-4 card-div">
+									<div class="card_image text-center">
+										<img src="{{ asset('/storage/tovarimages/' . $tovarData['tovar_image']) }}" alt="tovar" class="tovar img-fluid">
 									</div>
-									<div class="d-flex justify-content-between">
-										<form action="{{ route('cart.deleteAll') }}" method="post">
-											@csrf
-											<input type="hidden" name="tovar_id" value={{ $tovarId }}>
-											<input class="in_card" type="submit" value="Удалить всё">
-										</form>
-										<form action="{{ route('cart.delete') }}" method="post">
-											@csrf
-											<input type="hidden" name="tovar_id" value={{ $tovarId }}>
-											<input class="in_card" type="submit" value="Удалить 1">
-										</form>
+									<div class="my-2">
+										<p class="tovar_name text-center fs-5 m-0">{{ $tovarData['tovar_name'] }}</p>
+									</div>
+									<div class="tovar_info p-0">
+										<div class="d-flex justify-content-between">
+											<p class="cena m-0 fw-bold fs-4">{{ $tovarData['tovar_price'] }} ₽</p>
+											<p class="cena m-0 fw-bold fs-4">Кол-во: {{ $tovarData['tovar_count'] }}</p>
+										</div>
+										<div class="d-flex justify-content-between m-0 pb-0">
+											<form action="{{ route('cart.deleteAll') }}" method="post">
+												@csrf
+												<input type="hidden" name="tovar_id" value={{ $tovarId }}>
+												<input class="in_card" type="submit" value="Удалить всё">
+											</form>
+											<form action="{{ route('cart.delete') }}" method="post">
+												@csrf
+												<input type="hidden" name="tovar_id" value={{ $tovarId }}>
+												<input class="in_card" type="submit" value="Удалить 1">
+											</form>
+										</div>
 									</div>
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
 					@endforeach 
 				</div>
-
+				
 					{{-- <div class="tovars">
 					@foreach($userCart as $tovarId => $tovarData)
 						<div class="cardd" id="{{ $tovarId }}">
@@ -108,7 +211,11 @@
 										<form action="{{ route('coupons.deleteAll') }}" method="post">
 											@csrf
 											<input type="hidden" name="coupon_id" value={{ $couponId }}>
-											<input class="in_card" type="submit" value="Удалить всё">
+											{{-- <input class="in_card" type="submit" value="Удалить всё"> --}}
+											<input class="in_card desktop addToCartButton" type="submit" value="Удалить всё" id="addToCartButton">
+											<input class="in_card mobile addToCartButtonMobile" type="submit" value="всё" id="addToCartButton">
+											{{-- <input class="in_card fw-bolder addToCartButton desktop" type="submit" value="В корзину" id="addToCartButton">
+											<input class="in_card fw-bolder addToCartButtonMobile mobile ps-2 pe-2" type="submit" value="+" id="addToCartButton"> --}}
 										</form>
 										<form action="{{ route('coupons.delete') }}" method="post">
 											@csrf
@@ -164,21 +271,21 @@
 			@if (!empty($userCart) || !empty($userCartCoupons))
 				@if(session()->has('user_data'))
 				<div class="fff">
-					<p class="symma fw-bold fs-4">Общая сумма: {{ $totalPrice + $totalPriceCoupons }} ₽</p>
-					<div>
+					<p class="symma fw-bold fs-4 m-0">Общая сумма: {{ $totalPrice + $totalPriceCoupons }} ₽</p>
+					<div class="form_oformit">
 						<form action="{{ route('order.create') }}" method="post">
 							@csrf
 							<input type="hidden" name="user_id" value="{{ session('user_data')['id'] }}">
 							<input type="hidden" name="tovars" value="{{ json_encode($userCart) }}">
 							<input type="hidden" name="coupons" value="{{ json_encode($userCartCoupons) }}">
 							<input type="hidden" name="price" value="{{ $totalPrice + $totalPriceCoupons }}">
-							<div class="form-check">
+							<div class="form-check mb-1">
 								<input class="form-check-input" type="checkbox" value="oplata1" id="flexCheckCheckedDisabled" checked disabled>
 								<label class="form-check-label" for="flexCheckCheckedDisabled">
 								  Оплата при получении заказа
 								</label>
 							  </div>
-							<input class="in_card" type="submit" value="Оформить заказ">
+							<input class="in_card oformit" type="submit" value="Оформить заказ">
 						</form>
 					</div>
 				</div>

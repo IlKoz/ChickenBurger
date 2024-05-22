@@ -42,21 +42,265 @@ class DatabaseSeeder extends Seeder
 
 		
 		// Tovar
-		$tovar_burger = [
+		//category_1
+		// $tovar_burger = [
+        //     'name' => 'Чизбургер',
+        //     'description' => 'Стрипсы из куриного филе оригинальные, Булочка Солнечная, Сыр плавленый ломтевой, Кетчуп томатный, Соус Горчичный, Лук репчатый, Огурцы маринованные',
+		// 	'category_id' => 1,
+		// 	'image' => '20231204155701Burger1.png',
+        // ];
+		//category_2
+		// $tovar_tvister = [
+        //     'name' => 'Айтвистер',
+        //     'description' => 'Тортилья пшеничная со вкусом сыра, Салат Айсберг, Томаты свежие, Соус Бургер, Байтсы',
+		// 	'category_id' => 2,
+		// 	'image' => '20231208120640Tvister1.png',
+        // ];
+
+
+
+
+		// Tovar
+		//category_1
+		$tovar_burger1 = [
+            'name' => 'Чикенбургер',
+            'description' => 'Котлета куриная оригинальная, Соус майонезный, Салат айсберг, Булочка Солнечная',
+			'price' => '64',
+			'category_id' => 1,
+			'image' => 'Burger1.png',
+        ];
+		$tovar_burger2 = [
             'name' => 'Чизбургер',
             'description' => 'Стрипсы из куриного филе оригинальные, Булочка Солнечная, Сыр плавленый ломтевой, Кетчуп томатный, Соус Горчичный, Лук репчатый, Огурцы маринованные',
+			'price' => '99',
 			'category_id' => 1,
-			'image' => '20231204155701Burger1.png',
+			'image' => 'Burger2.png',
         ];
-		$tovar_tvister = [
-            'name' => 'Айтвистер',
-            'description' => 'Тортилья пшеничная со вкусом сыра, Салат Айсберг, Томаты свежие, Соус Бургер, Байтсы',
-			'category_id' => 2,
-			'image' => '20231208120640Tvister1.png',
+		$tovar_burger3 = [
+            'name' => 'Чизбургер Де Люкс',
+            'description' => 'Булочка Солнечная, Филе Куриное оригинальное, Томаты свежие, Сыр плавленый ломтевой, Салат Айсберг, Кетчуп томатный, Соус Горчичный, Огурцы маринованные, Лук репчатый',
+			'price' => '119',
+			'category_id' => 1,
+			'image' => 'Burger3.png',
+        ];
+		$tovar_burger4 = [
+            'name' => 'Шефбургер Джуниор оригинальный',
+            'description' => 'Булочка с кунжутом, Стрипсы OR, Соус Цезарь, Томаты свежие, Салат айсберг',
+			'price' => '139',
+			'category_id' => 1,
+			'image' => 'Burger4.png',
+        ];
+		$tovar_burger5 = [
+            'name' => 'Шефбургер оригинальный',
+            'description' => 'Булочка с кунжутом, Филе Куриное оригинальное, Соус Цезарь, Томаты свежие, Салат Айсберг',
+			'price' => '209',
+			'category_id' => 1,
+			'image' => 'Burger5.png',
+        ];
+		$tovar_burger6 = [
+            'name' => 'Шефбургер Де Люкс оригинальный',
+            'description' => 'Булочка с кунжутом, Филе куриное оригинальное, Соус Цезарь, Томаты свежие, Сыр плавленый ломтевой, Салат Айсберг, Бекон варено-копченый',
+			'price' => '219',
+			'category_id' => 1,
+			'image' => 'Burger6.png',
         ];
 
-		Tovar::factory(6)->create($tovar_burger);
-		Tovar::factory(6)->create($tovar_tvister);
+		//category_2
+		$tovar_tvister1 = [
+            'name' => 'Твистер',
+            'description' => 'Тортилья пшеничная со вкусом сыра, Салат Айсберг, Томаты свежие, Соус Бургер, Байтсы',
+			'price' => '69',
+			'category_id' => 2,
+			'image' => 'Twister1.png',
+        ];
+		$tovar_tvister2 = [
+            'name' => 'Мега Твистер',
+            'description' => 'Огурцы маринованные, Кетчуп томатный, Картофель фри, Тортилья пшеничная, Коул слоу (капуста, морковь), Соус Майонезный, Томаты свежие, Стрипсы OR',
+			'price' => '369',
+			'category_id' => 2,
+			'image' => 'Twister2.png',
+        ];
+		$tovar_tvister3 = [
+            'name' => 'Чикенмастер',
+            'description' => 'Тортилья пшеничная, Филе куриное оригинальное, Томаты свежие, Салат Айсберг, Сыр плавленый ломтевой, Картофель по-деревенски, Соус майонезный',
+			'price' => '299',
+			'category_id' => 2,
+			'image' => 'Twister3.png',
+        ];
+		$tovar_tvister4 = [
+            'name' => 'Чиз Чикенмастер',
+            'description' => 'Сырная котлета, Салат Айсберг, Тортилья пшеничная, Томаты свежие, Соус Сырный, Филе Куриное оригинальное',
+			'price' => '479',
+			'category_id' => 2,
+			'image' => 'Twister4.png',
+        ];
+
+		//category_3
+		$tovar_bascket1 = [
+            'name' => 'Баскет с ножками',
+            'description' => 'Голень OR, Мука пшеничная хлебопекарная в/с, Масло растительное, Соль поваренная пищевая, Ароматизатор пищевой "Панировка для курицы", Молочно-яичная смесь',
+			'price' => '329',
+			'category_id' => 3,
+			'image' => 'bascket1.png',
+        ];
+		$tovar_bascket2 = [
+            'name' => 'Баскет с стрипсами',
+            'description' => 'Байтсы, Мука пшеничная хлебопекарная в/с, Масло растительное, Пищевая добавка "острая и пряная панировка"',
+			'price' => '359',
+			'category_id' => 3,
+			'image' => 'bascket2.png',
+        ];
+
+		//category_4
+		$tovar_chicken1 = [
+            'name' => 'Ножки',
+            'description' => 'Голень OR, Мука пшеничная хлебопекарная в/с, Масло растительное, Соль поваренная пищевая, Ароматизатор пищевой "Панировка для курицы", Молочно-яичная смесь',
+			'price' => '249',
+			'category_id' => 4,
+			'image' => 'chicken1.png',
+        ];
+		$tovar_chicken2 = [
+            'name' => 'Наггетсы',
+            'description' => 'Наггетсы оригинальные, Масло растительное',
+			'price' => '289',
+			'category_id' => 4,
+			'image' => 'chicken2.png',
+        ];
+		$tovar_chicken3 = [
+            'name' => 'Стрипсы',
+            'description' => 'Стрипсы OR, Мука пшеничная хлебопекарная в/с, Масло растительное, Соль поваренная пищевая, Ароматизатор пищевой "Панировка для курицы", Молочно-яичная смесь',
+			'price' => '379',
+			'category_id' => 4,
+			'image' => 'chicken3.png',
+        ];
+
+		//category_5
+		$tovar_fri1 = [
+            'name' => 'Картофель Фри Малый',
+            'description' => 'Картофель фри (Картофель фри, масло растительное), Соль поваренная пищевая',
+			'price' => '89',
+			'category_id' => 5,
+			'image' => 'fri1.png',
+        ];
+		$tovar_fri2 = [
+            'name' => 'Картофель Фри Стандартный',
+            'description' => 'Картофель фри (Картофель фри, масло растительное), Соль поваренная пищевая',
+			'price' => '119',
+			'category_id' => 5,
+			'image' => 'fri2.png',
+        ];
+		$tovar_fri3 = [
+            'name' => 'Картофель Фри Баскет',
+            'description' => 'Картофель фри (Картофель фри, масло растительное), Соль поваренная пищевая',
+			'price' => '219',
+			'category_id' => 5,
+			'image' => 'fri3.png',
+        ];
+
+		//category_6
+		$tovar_sauce1 = [
+            'name' => 'Соус Сырный',
+			'price' => '59',
+			'category_id' => 6,
+			'image' => 'souce1.png',
+        ];
+		$tovar_sauce2 = [
+            'name' => 'Соус Кисло-Сладкий Чили',
+			'price' => '59',
+			'category_id' => 6,
+			'image' => 'souce2.png',
+        ];
+		$tovar_sauce3 = [
+            'name' => 'Соус Барбекю',
+			'price' => '59',
+			'category_id' => 6,
+			'image' => 'souce3.png',
+        ];
+		$tovar_sauce4 = [
+            'name' => 'Соус Чесночный',
+			'price' => '59',
+			'category_id' => 6,
+			'image' => 'souce4.png',
+        ];
+		$tovar_sauce5 = [
+            'name' => 'Соус Терияки',
+			'price' => '59',
+			'category_id' => 6,
+			'image' => 'souce5.png',
+        ];
+		$tovar_sauce6 = [
+            'name' => 'Кетчуп Томатный',
+			'price' => '59',
+			'category_id' => 6,
+			'image' => 'souce6.png',
+        ];
+
+		//category_7
+		$tovar_drink1 = [
+            'name' => 'Эвервесс Кола в бутылке 0,5 л',
+			'price' => '149',
+			'category_id' => 7,
+			'image' => 'drink1.png',
+        ];
+		$tovar_drink2 = [
+            'name' => 'Чай Lipton Лимон в бутылке 0,5 л',
+			'price' => '169',
+			'category_id' => 7,
+			'image' => 'drink2.png',
+        ];
+		$tovar_drink3 = [
+            'name' => 'Чай Lipton Зеленый в бутылке 0,5 л',
+			'price' => '169',
+			'category_id' => 7,
+			'image' => 'drink3.png',
+        ];
+		$tovar_drink4 = [
+            'name' => 'Аква Минерале без газа 0,5л',
+			'price' => '149',
+			'category_id' => 7,
+			'image' => 'drink4.png',
+        ];
+		
+		
+
+
+
+
+
+		Tovar::factory(1)->create($tovar_burger1);
+		Tovar::factory(1)->create($tovar_burger2);
+		Tovar::factory(1)->create($tovar_burger3);
+		Tovar::factory(1)->create($tovar_burger4);
+		Tovar::factory(1)->create($tovar_burger5);
+		Tovar::factory(1)->create($tovar_burger6);
+
+		Tovar::factory(1)->create($tovar_tvister1);
+		Tovar::factory(1)->create($tovar_tvister2);
+		Tovar::factory(1)->create($tovar_tvister3);
+		Tovar::factory(1)->create($tovar_tvister4);
+
+		Tovar::factory(1)->create($tovar_bascket1);
+		Tovar::factory(1)->create($tovar_bascket2);
+
+		Tovar::factory(1)->create($tovar_chicken1);
+		Tovar::factory(1)->create($tovar_chicken2);
+		Tovar::factory(1)->create($tovar_chicken3);
+
+		Tovar::factory(1)->create($tovar_fri1);
+		Tovar::factory(1)->create($tovar_fri2);
+		Tovar::factory(1)->create($tovar_fri3);
+
+		Tovar::factory(1)->create($tovar_sauce1);
+		Tovar::factory(1)->create($tovar_sauce2);
+		Tovar::factory(1)->create($tovar_sauce3);
+		Tovar::factory(1)->create($tovar_sauce4);
+		Tovar::factory(1)->create($tovar_sauce5);
+		Tovar::factory(1)->create($tovar_sauce6);
+
+		Tovar::factory(1)->create($tovar_drink1);
+		Tovar::factory(1)->create($tovar_drink2);
+		Tovar::factory(1)->create($tovar_drink3);
+		Tovar::factory(1)->create($tovar_drink4);
 
 
 		// Coupon
@@ -71,26 +315,26 @@ class DatabaseSeeder extends Seeder
 
 
 		// CouponTovar
-		$zxc = 1;
-		while ($zxc < 6)
-		{
-			CouponTovar::factory()->create([
-				'coupon_id' => $zxc,
-				'tovar_id' => $zxc,
-			]);
-			$zxc++;
-		};
-		$zxc2 = 1;
-		$qwe = 7;
-		while ($zxc2 < 6)
-		{
-			CouponTovar::factory()->create([
-				'coupon_id' => $zxc2,
-				'tovar_id' => $qwe,
-			]);
-			$zxc2++;
-			$qwe++;
-		};
+		// $zxc = 1;
+		// while ($zxc < 6)
+		// {
+		// 	CouponTovar::factory()->create([
+		// 		'coupon_id' => $zxc,
+		// 		'tovar_id' => $zxc,
+		// 	]);
+		// 	$zxc++;
+		// };
+		// $zxc2 = 1;
+		// $qwe = 7;
+		// while ($zxc2 < 4)
+		// {
+		// 	CouponTovar::factory()->create([
+		// 		'coupon_id' => $zxc2,
+		// 		'tovar_id' => $qwe,
+		// 	]);
+		// 	$zxc2++;
+		// 	$qwe++;
+		// };
 
 		// User
 		$user = [
