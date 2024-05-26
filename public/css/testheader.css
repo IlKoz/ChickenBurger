@@ -126,7 +126,15 @@ main {
     transform: scale(1.1);
 }
 
+.hover-zoom-c {
+    display: inline-block;
+    /* overflow: hidden; */
+    transition: transform 0.3s ease;
+}
 
+.hover-zoom-c:hover {
+    transform: scale(1.05);
+}
 
 .count_cart{
 	background-color: #E40000;

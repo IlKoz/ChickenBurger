@@ -49,6 +49,9 @@ Route::post('/coupons/deleteAll', [CouponsController::class, 'deleteAll'])->name
 Route::get('/coupons/{coupon}', [CouponsController::class, 'show'])->name('coupons.show');
 
 // Promo
+Route::get('/company', [MainController::class, 'company'])->name('main.company');
+
+// Promo
 Route::get('/promo', [MainController::class, 'promo'])->name('main.promo');
 
 // Map

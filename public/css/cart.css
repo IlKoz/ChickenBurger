@@ -53,97 +53,92 @@
     }
 }
 
-/* .info{
-	display: flex;
-	justify-content: space-between;
-	
+.card-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1rem;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.25);
+    transition: 0.4s;
+    border-radius: 10px;
 }
 
-
-
-
-.tovars{
-	display: grid;
-  	grid-gap: 50px;
-  	grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
-	margin-bottom: 20px;
+.card-div:hover {
+    box-shadow: 0 0 35px 3px rgba(0, 0, 0, 0.25);
 }
 
-.cardd{
-	width: 234px;
-	border-radius: 20px;
-	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.25);
-	transition: 0.4s;
+.card_image {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
 }
 
-.cardd:hover{
-	transition: 0.4s;
-	box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.25);
+.card_image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.card_image{
-	margin: 15px;
+.tovar_name {
+    margin: 1rem 0;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.tovar{
-	width: 100%;
-	height: 100%;
+.tovar_info {
+    display: flex;
+    flex-direction: column;
 }
 
-.tovar_name{
-	text-align: center;
+.tovar_info .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.tovar_info{
-	justify-content: space-between;
+.in_card {
+    background-color: #E40000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.tovar_name{
-	margin-bottom: 20px;
+.in_card:hover {
+    background-color: #c30000;
 }
 
-.tovar_info{
-	margin-bottom: 20px;
-	margin: 15px;
+@media (max-width: 768px) {
+    .tovars .tovar_info .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tovars .tovar_info .d-flex .cena {
+        margin-bottom: 0.5rem;
+    }
+    .tovars .tovar_info .d-flex form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    .tovars .tovar_info .d-flex form input.in_card {
+        width: 100%;
+    }
+    .tovars .tovar_name {
+        margin: 0;
+    }
+    .cena {
+        text-align: center;
+    }
 }
-
-.tovar_info2{
-	display: flex;
-	justify-content: space-between;
-}
-
-.in_card{
-	color: white;
-	background: #E40000;
-	border-radius: 4px;
-	padding: 5px 10px;
-	font-weight: bold;
-	font-size: 14px;
-	border: none;
-
-	margin-top: 10px;
-}
-
-.in_card:hover{
-	cursor: pointer;
-}
-
-.cena{
-	padding: 5px 10px;
-	font-weight: bold;
-	font-size: 16px;
-}
-
-.fff{
-	display: flex;
-}
-
-.symma{
-	font-weight: bold;
-	font-size: 20px;
-
-	display: flex;
-  	align-items: center;
-  	justify-content: center;
-	margin-right: 25px;
-} */

@@ -18,6 +18,17 @@ return new class extends Migration
 			$table->string('working_time');
             $table->timestamps();
         });
+
+		Schema::table('users', function (Blueprint $table) {
+            $table->unsignedBigInteger('restourant_id')->nullable();
+			
+			$table->foreign('restourant_id')->references('id')->on('restourants');
+        });
+		Schema::table('orders', function (Blueprint $table) {
+            $table->unsignedBigInteger('restourant_id');
+			
+			$table->foreign('restourant_id')->references('id')->on('restourants');
+        });
     }
 
     /**
@@ -26,5 +37,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('restourants');
+		Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['restourant_id']);
+            $table->dropColumn('restourant_id');
+        });
     }
 };

@@ -8,46 +8,157 @@
 	
 	
 	<div class="container">
+		<style>
+			.alert{
+				z-index: 1050;
+			}
+			.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	position: fixed;
+	width: 69%;
+}
+@media (max-width: 768px) {
+    .alert {
+        width: 93%;
+    }
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-success a {
+    color: #0c662e;
+    text-decoration: underline;
+}
+
+.alert-success a:hover {
+    color: #08401e;
+}
+		</style>
+		@if(session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+   		@endif
 		<div>
-			<p class="menu" id="menu">Карточка</p>
+			<p class="menuu m-0" id="menu">Купон</p>
 		</div>
-		<div class="all">
-			<div class="card_image">
-				<img class="tovar border rounded" src="{{ asset('/storage/couponimages/' . $coupon->image) }}" alt="tovar">
-			</div>
-			<div class="card_info">
-				<p class="p1">{{ $coupon->name }}</p>
-				<p class="p2">Цена: {{ $coupon->price }} ₽</p>
-				<p class="p3">Состав: {{ $coupon->description }}</p>
-				<div class="niz">
-					
-					<div>
-						<form action="{{ route('coupons.create') }}" method="post">
-							@csrf
-	
-							<div class="quantity_inner me-2">        
-								<button type="button" class="bt_minus">
-									<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-								</button>
-								<input name="coupon_count" type="text" value="1" size="2" class="quantity" data-max-count="99" />
-								<button type="button" class="bt_plus">
-									<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-								</button>
-							</div>
-	
-							<input type="hidden" name="coupon_id" value={{ $coupon->id }}>
-							<input class="in_card hover-zoom" type="submit" value="В корзину">
-						</form>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-12">
+					<div class="card_image">
+						<img class="tovar border rounded img-fluid" src="{{ asset('/storage/couponimages/' . $coupon->image) }}" alt="tovar">
 					</div>
-	
+				</div>
+				<div class="col-md-9 col-12">
+					<div class="card_info">
+						<p class="p1">{{ $coupon->name }}</p>
+						<p class="p2">Цена: {{ $coupon->price }} ₽</p>
+						<p class="p3">Состав: {{ $coupon->description }}</p>
+						<div class="niz">
+							<div>
+								<form action="{{ route('coupons.create') }}" method="post">
+									@csrf
+									<div class="quantity_inner me-2">
+										<button type="button" class="bt_minus">
+											<svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+										</button>
+										<input name="coupon_count" type="text" value="1" size="2" class="quantity" data-max-count="99" />
+										<button type="button" class="bt_plus">
+											<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+										</button>
+									</div>
+									<input type="hidden" name="coupon_id" value="{{ $coupon->id }}">
+									<input class="in_card hover-zoom" type="submit" value="В корзину">
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+		
 		<div>
 			<p class="Sostoitiz">Состоит из:</p>
 		</div>
+<style>
 
-		<div class="row mb-3 tovars">
+	
+	.card-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.card_image {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Соотношение сторон 4:3 */
+}
+
+.card_image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tovar_name {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tovar_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+</style>
+
+<div class="row mb-3 tovars">
+	@foreach ($coupon->tovars as $item)
+	<div class="pt-2 pb-2 col-md-3 col-6 d-flex" id="{{ $item->id }}">
+		<div class="w-100 d-flex flex-column h-100">
+			<a href="{{ route('main.show', ['tovar' => $item->id]) }}" class="a_card text-decoration-none d-flex flex-column h-100">
+				<div class=" m-1 p-4 card-div hover-zoom d-flex flex-column h-100">
+					<div class="card_image text-center mb-2 d-flex justify-content-center">
+						<img src="{{ asset('/storage/tovarimages/' . $item->image) }}" alt="tovar" class="tovar img-fluid">
+					</div>
+					<div class="d-flex flex-column flex-grow-1">
+						<p class="tovar_name text-center fs-5">{{ $item->name }}</p>
+					</div>
+					<div class="tovar_info d-flex justify-content-between align-items-center mt-auto">
+						<p class="cena m-0 fw-bold fs-4">{{ $item->price }} ₽</p>
+						<form action="{{ route('cart.create') }}" method="post" id="addToCartForm" class="d-flex flex-column justify-content-start align-items-center">
+							@csrf
+							<input type="hidden" name="tovar_id" value="{{ $item->id }}">
+							<input type="hidden" name="tovar_count" value="1">
+							<input class="in_card fw-bolder addToCartButton desktop" type="submit" value="В корзину" id="addToCartButton">
+							<input class="in_card fw-bolder addToCartButtonMobile mobile ps-2 pe-2" type="submit" value="+" id="addToCartButton">
+						</form>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	@endforeach
+</div>
+
+
+		{{-- <div class="row mb-3 tovars">
 			@foreach ($coupon->tovars as $item)
 			<div class="pt-2 pb-2 col-md-3 col-6 d-flex flex-column" id="{{ $item->id }}">
 				<a href="{{ route('main.show', ['tovar' => $item->id]) }}" class="a_card text-decoration-none">
@@ -68,7 +179,7 @@
 				</a>
 			</div>
 			@endforeach 
-		</div>
+		</div> --}}
 
 		{{-- <div class="tovars2">
 		@foreach ($coupon->tovars as $item)
@@ -117,5 +228,14 @@
 			}    
 		});    
 	</script>
+
+<script>
+	// Поиск элемента с классом .alert и скрытие его через 3 секунды
+	$(document).ready(function() {
+		setTimeout(function() {
+			$(".alert").fadeOut("slow");
+		}, 3000);
+	});
+</script>
 </main>
 @endsection

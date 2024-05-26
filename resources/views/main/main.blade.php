@@ -24,13 +24,13 @@
 			</div>
 			<div class="carousel-inner rounded">
 			  <div class="carousel-item active">
-				<img src="/image/banner.png" class="d-block w-100" alt="...">
+				<img src="/image/banner1.png" class="d-block w-100" alt="...">
 			  </div>
 			  <div class="carousel-item">
-				<img src="/image/banner.png" class="d-block w-100" alt="...">
+				<img src="/image/banner2.png" class="d-block w-100" alt="...">
 			  </div>
 			  <div class="carousel-item">
-				<img src="/image/banner.png" class="d-block w-100" alt="...">
+				<img src="/image/banner3.png" class="d-block w-100" alt="...">
 			  </div>
 			</div>
 			<button class="carousel-control-prev justify-content-start" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -51,7 +51,7 @@
 			<div class="categories-wrapper">
 				<ul class="nav nav-pills d-flex">
 					@foreach ($category as $cat)
-						<li class="nav-item align-items-center fs-4 mb-2"><a href="javascript:void(0)" class="nav_bar2 text-decoration-none" onclick="scrollToAnchor('{{ $cat->name }}')">{{ $cat->name }}</a></li>
+						<li class="nav-item align-items-center fs-4 mb-2 underline-one"><a href="javascript:void(0)" class="nav_bar2 text-decoration-none" onclick="scrollToAnchor('{{ $cat->name }}')">{{ $cat->name }}</a></li>
 					@endforeach
 				</ul>
 			</div>

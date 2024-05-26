@@ -27,6 +27,10 @@ class MainController extends Controller
 		// $tovar = Tovar::all();
 		return view('main/coupons');
 	}
+    public function company()
+	{
+		return view('main/company');
+	}
 
     public function promo()
 	{

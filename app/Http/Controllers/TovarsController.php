@@ -5,24 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tovar;
 use App\Models\Category;
+use App\Models\Orders;
 use Carbon\Carbon;
 
 class TovarsController extends Controller
 {
-	
-    public function index()
+	public function index(Request $request)
 	{
-		 // Проверяем, является ли пользователь администратором
-		// if (!(session()->has('user'))) {
-		// 	return redirect()->back();
-		// } elseif(session('user')['role'] !== 'admin'){
-		// 	return redirect()->back();
-		// };
-		
-		
-		$tovar = Tovar::all();
-		return view('admin/adminpanel', compact('tovar'));
+		$category_id = $request->query('category');
+		$query = Tovar::query();
+
+		if ($category_id) {
+			$query->where('category_id', $category_id);
+		}
+
+		$tovar = $query->get();
+		$categories = Category::all();
+
+		return view('admin.adminpanel', compact('tovar', 'categories'));
 	}
+
+    // public function index()
+	// {		
+	// 	$tovar = Tovar::all();
+	// 	return view('admin/adminpanel', compact('tovar'));
+	// }
 	
     public function create()
 	{
@@ -57,7 +64,7 @@ class TovarsController extends Controller
 			'image' => $name_file,  
 		]);
 
-		return redirect()->back();
+		return redirect()->route('adminpanel.index');
 
 		// Tovar::create([
 		// 	'name' => 'Чизбургер',  

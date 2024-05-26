@@ -50,6 +50,11 @@ class User extends Authenticatable
 		return $this->hasMany(Orders::class);
 	}
 
+	public function restourant()
+	{
+		return $this->belongsTo(Restourants::class);
+	}
+
 	// public function isAdmin()
 	// {
 	// 	return $this->role === 'admin'; // Предполагаем, что у вас есть поле "role" с значением "admin" для админов.

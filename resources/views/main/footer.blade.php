@@ -11,9 +11,9 @@
 			<div class="row mb-3">
 				<div class="p-2 col-md-3 col-6 d-flex flex-column text-center">
 					<h5>Компания</h5>
-					<a href="#"><span class="underline-one text-black">О нас</span></a>
+					<a href="{{ route('main.company') }}"><span class="underline-one text-black">О нас</span></a>
 					<a href="{{ route('main.map') }}"><span class="underline-one text-black">Мы на карте</span></a>
-					<a href="#"><span class="underline-one text-black">Работа у нас</span></a>
+					{{-- <a href="#"><span class="underline-one text-black">Работа у нас</span></a> --}}
 				</div>
 				<div class="p-2 col-md-3 col-6 d-flex flex-column text-center">
 					<h5>Клиентам</h5>

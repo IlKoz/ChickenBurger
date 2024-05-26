@@ -1,81 +1,68 @@
 /* main */
-
-main{
-	margin-top: 50px;
+main {
+    margin-top: 50px;
 }
 
-.menu{
-	font-weight: bold;
-	font-size: 48px;
-	margin-bottom: 30px;
+.menuu {
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 30px;
 }
 
-.all{
-	display: flex;
+.card_image {
+    margin: 15px;
 }
 
-.card_image{
-	/* background-color: aqua; */
-	margin: 15px;
+.tovar {
+    width: 100%;
 }
 
-.tovar{
-	width: 100%;
+.card_info {
+    margin: 15px;
 }
 
-.card_info{
-	margin: 15px;
-	width: 1000px;
+.p1 {
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
 }
 
-.p1{
-	font-size: 64px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-
-	margin-bottom: 10px;
+.p2 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 10px;
 }
 
-.p2{
-	font-size: 32px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: normal;
-
-	margin-bottom: 10px;
+.p3 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 10px;
 }
 
-.p3{
-	font-size: 32px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: normal;
-
-	margin-bottom: 10px;
+.in_card {
+    color: white;
+    background: #E40000;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-
-.in_card{
-	color: white;
-	background: #E40000;
-	border-radius: 4px;
-	padding: 5px 10px;
-	font-weight: bold;
-	font-size: 16px;
-	
+.niz {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.niz{
-	display: flex;
-  	align-items: center;
-  	justify-content: space-between;
-}
-
-/* asdasdasd */
-
+/* Количество товара */
 .quantity_inner * {
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }    
 .quantity_inner {
     display: inline-flex;
@@ -100,7 +87,7 @@ main{
     font-size: 30px;
     font-weight: bold;
     color: #000;
-    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .quantity_inner .bt_minus svg,
 .quantity_inner .bt_plus svg {
@@ -114,38 +101,55 @@ main{
     stroke: #000;
 }
 
-.Sostoitiz{
-	font-size: 32px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: normal;
+.Sostoitiz {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+}
 
-	margin-bottom: 20px;
+.card-div {
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.25);
+    transition: 0.4s;
+}
+.card-div:hover {
+    transition: 0.4s;
+    box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.25);
+}
+.in_card {
+    background-color: #E40000;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+
+/* Адаптивное поведение */
+@media (max-width: 767px) {
+    .menu {
+        font-size: 36px;
+        text-align: center;
+    }
+    .p1 {
+        font-size: 48px;
+        text-align: center;
+    }
+    .p2, .p3 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .card_info {
+        margin: 15px 0;
+    }
+    .niz {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 
-
-
-
-
-.card-div{
-	color: black;
-	border-radius: 20px;
-	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.25);
-	transition: 0.4s;
-}
-.card-div:hover{
-	transition: 0.4s;
-	box-shadow: 0px 0px 35px 3px rgba(0, 0, 0, 0.25);
-}
-.in_card{
-	background-color: #E40000;
-	color: white;
-	border-radius: 5px;
-	border: 0px;
-}
-
-/* Скрыть кнопку "В корзину" на мобильных устройствах */
 @media (max-width: 767px) {
     .addToCartButton.desktop {
         display: none;

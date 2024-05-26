@@ -13,12 +13,14 @@ class OrdersController extends Controller
 		$tovars = $request['tovars'];
 		$coupons = $request['coupons'];
 		$price = $request['price'];
+		$restourant = $request['restourant'];
 
 		Orders::create([
 			'user_id' => $user,
 			'tovars' => $tovars,
 			'coupons' => $coupons,
 			'price' => $price,
+			'restourant_id' => $restourant,
 		]);
 
 		session()->forget('user_cart');

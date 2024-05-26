@@ -84,21 +84,21 @@ class DatabaseSeeder extends Seeder
 			'image' => 'Burger3.png',
         ];
 		$tovar_burger4 = [
-            'name' => 'Шефбургер Джуниор оригинальный',
+            'name' => 'Шефбургер Джуниор',
             'description' => 'Булочка с кунжутом, Стрипсы OR, Соус Цезарь, Томаты свежие, Салат айсберг',
 			'price' => '139',
 			'category_id' => 1,
 			'image' => 'Burger4.png',
         ];
 		$tovar_burger5 = [
-            'name' => 'Шефбургер оригинальный',
+            'name' => 'Шефбургер',
             'description' => 'Булочка с кунжутом, Филе Куриное оригинальное, Соус Цезарь, Томаты свежие, Салат Айсберг',
 			'price' => '209',
 			'category_id' => 1,
 			'image' => 'Burger5.png',
         ];
 		$tovar_burger6 = [
-            'name' => 'Шефбургер Де Люкс оригинальный',
+            'name' => 'Шефбургер Де Люкс',
             'description' => 'Булочка с кунжутом, Филе куриное оригинальное, Соус Цезарь, Томаты свежие, Сыр плавленый ломтевой, Салат Айсберг, Бекон варено-копченый',
 			'price' => '219',
 			'category_id' => 1,
@@ -229,7 +229,7 @@ class DatabaseSeeder extends Seeder
 			'image' => 'souce5.png',
         ];
 		$tovar_sauce6 = [
-            'name' => 'Кетчуп Томатный',
+            'name' => 'Соус Кетчуп Томатный',
 			'price' => '59',
 			'category_id' => 6,
 			'image' => 'souce6.png',
@@ -304,14 +304,49 @@ class DatabaseSeeder extends Seeder
 
 
 		// Coupon
-		$coupon = [
-			'name' => '5261',
-			'description' => 'Чизбурегер и Айтвистер',
-			'old_price' => random_int(199, 499),
-			'price' => random_int(199, 499),
-			'image' => 'Coupon1.png',
+		// $coupon = [
+		// 	'name' => '5261',
+		// 	'description' => 'Чизбурегер и Айтвистер',
+		// 	'old_price' => random_int(199, 499),
+		// 	'price' => random_int(199, 499),
+		// 	'image' => 'Coupon1.png',
+        // ];
+		// Coupon::factory(6)->create();
+
+		$coupon1 = [
+			'name' => '6535',
+			'description' => 'Твистер + Картофель Фри Стандартный',
+			'old_price' => 298,
+			'price' => 259,
+			'image' => 'coupon1.png',
         ];
-		Coupon::factory(6)->create();
+		$coupon2 = [
+			'name' => '5782',
+			'description' => 'Шефбургер + Картофель Фри Стандартный + Соус Сырный',
+			'old_price' => 347,
+			'price' => 299,
+			'image' => 'coupon2.png',
+        ];
+		$coupon3 = [
+			'name' => '6885',
+			'description' => 'Шефбургер Джуниор + Наггетсы + Соус Кетчуп Томатный',
+			'old_price' => 467,
+			'price' => 419,
+			'image' => 'coupon3.png',
+        ];
+		$coupon4 = [
+			'name' => '5567',
+			'description' => 'Чикенмастер + Наггетсы + Соус Кетчуп Томатный + Соус Сырный',
+			'old_price' => 476,
+			'price' => 429,
+			'image' => 'coupon4.png',
+        ];
+		
+		Coupon::factory(1)->create($coupon1);
+		Coupon::factory(1)->create($coupon2);
+		Coupon::factory(1)->create($coupon3);
+		Coupon::factory(1)->create($coupon4);
+
 
 
 		// CouponTovar
@@ -336,144 +371,213 @@ class DatabaseSeeder extends Seeder
 		// 	$qwe++;
 		// };
 
+
+		CouponTovar::factory()->create([
+			'coupon_id' => 1,
+			'tovar_id' => 7,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 1,
+			'tovar_id' => 17,
+		]);
+
+		CouponTovar::factory()->create([
+			'coupon_id' => 2,
+			'tovar_id' => 5,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 2,
+			'tovar_id' => 17,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 2,
+			'tovar_id' => 19,
+		]);
+
+		CouponTovar::factory()->create([
+			'coupon_id' => 3,
+			'tovar_id' => 4,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 3,
+			'tovar_id' => 14,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 3,
+			'tovar_id' => 24,
+		]);
+
+		CouponTovar::factory()->create([
+			'coupon_id' => 4,
+			'tovar_id' => 9,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 4,
+			'tovar_id' => 14,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 4,
+			'tovar_id' => 19,
+		]);
+		CouponTovar::factory()->create([
+			'coupon_id' => 4,
+			'tovar_id' => 24,
+		]);
+
+		// Рестораны
+		$map = [
+            'address' => "Красноярск, Комсомольский просп., 18",
+        ];
+		$map2 = [
+            'address' => "Красноярск, ул. 9 Мая, 62",
+        ];
+		$map3 = [
+            'address' => "Красноярск, ул. 9 Мая, 77",
+        ];
+		$map4 = [
+            'address' => "Красноярск, Сибирский пер., 5А",
+        ];
+		Restourants::factory(1)->create($map);
+		Restourants::factory(1)->create($map2);
+		Restourants::factory(1)->create($map3);
+		Restourants::factory(1)->create($map4);
+
 		// User
 		$user = [
 			'name' => 'Илья',
-			'email' => 'qwe@qwe',
-			'password' => "qweqweqwe",
+			'email' => 'zxc@zxc',
+			'password' => "zxczxczxc",
 			'role' => "admin",
         ];
 		$user2 = [
-			'name' => 'Саня',
-			'email' => 'zxc@zxc',
-			'password' => "zxczxczxc",
+			'name' => 'Александр',
+			'email' => 'qwe@qwe',
+			'password' => "qweqweqwe",
 			'role' => "worker",
         ];
 		User::factory(1)->create($user);
 		User::factory(1)->create($user2);
 
 		// User
-		$order = [
-			'user_id' => 1,
-			'tovars' => json_encode([
-				"1" => [
-					"tovar_id" => "1",
-					"tovar_name" => "Чизбургер",
-					"tovar_count" => "1",
-					"tovar_image" => "20231204155701Burger1.png",
-					"tovar_price" => 176
-				],
-				"7" => [
-					"tovar_id" => "7",
-					"tovar_name" => "Айтвистер",
-					"tovar_count" => 2,
-					"tovar_image" => "20231208120640Tvister1.png",
-					"tovar_price" => 310
-				]
-			]),
-			'coupons' => json_encode([
-				"1" => [
-					"coupon_id" => "1",
-					"coupon_name" => "5261",
-					"coupon_count" => "1",
-					"coupon_image" => "Coupon1.png",
-					"coupon_price" => 339,
-					"coupon_description" => "Чизбурегер и Айтвистер"
-				]
-			]),
-			'price' => 999,
-			'status' => "Ожидается",
-		];
-		$order2 = [
-			'user_id' => 1,
-			'tovars' => json_encode([
-				"1" => [
-					"tovar_id" => "1",
-					"tovar_name" => "Чизбургер",
-					"tovar_count" => "1",
-					"tovar_image" => "20231204155701Burger1.png",
-					"tovar_price" => 176
-				],
-			]),
-			'price' => 149,
-			'status' => "Готовится",
-		];
-		$order3 = [
-			'user_id' => 1,
-			'tovars' => json_encode([
-				"1" => [
-					"tovar_id" => "1",
-					"tovar_name" => "Чизбургер",
-					"tovar_count" => "1",
-					"tovar_image" => "20231204155701Burger1.png",
-					"tovar_price" => 176
-				],
-			]),
-			'price' => 149,
-			'status' => "Готов",
-		];
-		$order4 = [
-			'user_id' => 1,
-			'tovars' => json_encode([
-				"1" => [
-					"tovar_id" => "1",
-					"tovar_name" => "Чизбургер",
-					"tovar_count" => "1",
-					"tovar_image" => "20231204155701Burger1.png",
-					"tovar_price" => 176
-				],
-			]),
-			'price' => 149,
-			'status' => "Выдан",
-		];
-		$order5 = [
-			'user_id' => 1,
-			'tovars' => json_encode([
-				"1" => [
-					"tovar_id" => "1",
-					"tovar_name" => "Чизбургер",
-					"tovar_count" => "1",
-					"tovar_image" => "20231204155701Burger1.png",
-					"tovar_price" => 176
-				],
-			]),
-			'price' => 149,
-			'status' => "Отменен",
-		];
+		// $order = [
+		// 	'user_id' => 1,
+		// 	'tovars' => json_encode([
+		// 		"1" => [
+		// 			"tovar_id" => "1",
+		// 			"tovar_name" => "Чизбургер",
+		// 			"tovar_count" => "1",
+		// 			"tovar_image" => "20231204155701Burger1.png",
+		// 			"tovar_price" => 176
+		// 		],
+		// 		"7" => [
+		// 			"tovar_id" => "7",
+		// 			"tovar_name" => "Айтвистер",
+		// 			"tovar_count" => 2,
+		// 			"tovar_image" => "20231208120640Tvister1.png",
+		// 			"tovar_price" => 310
+		// 		]
+		// 	]),
+		// 	'coupons' => json_encode([
+		// 		"1" => [
+		// 			"coupon_id" => "1",
+		// 			"coupon_name" => "5261",
+		// 			"coupon_count" => "1",
+		// 			"coupon_image" => "Coupon1.png",
+		// 			"coupon_price" => 339,
+		// 			"coupon_description" => "Чизбурегер и Айтвистер"
+		// 		]
+		// 	]),
+		// 	'price' => 999,
+		// 	'status' => "Ожидается",
+		// 	'restourant' => 1,
+		// ];
+		// $order2 = [
+		// 	'user_id' => 1,
+		// 	'tovars' => json_encode([
+		// 		"1" => [
+		// 			"tovar_id" => "1",
+		// 			"tovar_name" => "Чизбургер",
+		// 			"tovar_count" => "1",
+		// 			"tovar_image" => "20231204155701Burger1.png",
+		// 			"tovar_price" => 176
+		// 		],
+		// 	]),
+		// 	'price' => 149,
+		// 	'status' => "Готовится",
+		// 	'restourant' => 1,
+		// ];
+		// $order3 = [
+		// 	'user_id' => 1,
+		// 	'tovars' => json_encode([
+		// 		"1" => [
+		// 			"tovar_id" => "1",
+		// 			"tovar_name" => "Чизбургер",
+		// 			"tovar_count" => "1",
+		// 			"tovar_image" => "20231204155701Burger1.png",
+		// 			"tovar_price" => 176
+		// 		],
+		// 	]),
+		// 	'price' => 149,
+		// 	'status' => "Готов",
+		// 	'restourant' => 1,
+		// ];
+		// $order4 = [
+		// 	'user_id' => 1,
+		// 	'tovars' => json_encode([
+		// 		"1" => [
+		// 			"tovar_id" => "1",
+		// 			"tovar_name" => "Чизбургер",
+		// 			"tovar_count" => "1",
+		// 			"tovar_image" => "20231204155701Burger1.png",
+		// 			"tovar_price" => 176
+		// 		],
+		// 	]),
+		// 	'price' => 149,
+		// 	'status' => "Выдан",
+		// 	'restourant' => 1,
+		// ];
+		// $order5 = [
+		// 	'user_id' => 1,
+		// 	'tovars' => json_encode([
+		// 		"1" => [
+		// 			"tovar_id" => "1",
+		// 			"tovar_name" => "Чизбургер",
+		// 			"tovar_count" => "1",
+		// 			"tovar_image" => "20231204155701Burger1.png",
+		// 			"tovar_price" => 176
+		// 		],
+		// 	]),
+		// 	'price' => 149,
+		// 	'status' => "Отменен",
+		// 	'restourant' => 1,
+		// ];
 		
 
-		Orders::factory(1)->create($order);
-		Orders::factory(1)->create($order2);
-		Orders::factory(1)->create($order3);
-		Orders::factory(1)->create($order4);
-		Orders::factory(1)->create($order5);
+		// Orders::factory(1)->create($order);
+		// Orders::factory(1)->create($order2);
+		// Orders::factory(1)->create($order3);
+		// Orders::factory(1)->create($order4);
+		// Orders::factory(1)->create($order5);
 
 
-		Promo::factory(6)->create();
+		// Promo::factory(6)->create();
+		Promo::factory()->create([
+			'name' => 'Купон 6535 в Chicken Burger',
+			'description' => 'Твистер + Картофель Фри Стандартный по купону 6535',
+		]);
+		Promo::factory()->create([
+			'name' => 'Купон 5782 в Chicken Burger',
+			'description' => 'Шефбургер + Картофель Фри Стандартный + Соус Сырный по купону 5782',
+		]);
+		Promo::factory()->create([
+			'name' => 'Купон 6885 в Chicken Burger',
+			'description' => 'Шефбургер Джуниор + Наггетсы + Соус Кетчуп Томатный по купону 6885',
+		]);
+		Promo::factory()->create([
+			'name' => 'Купон 5567 в Chicken Burger',
+			'description' => 'Чикенмастер + Наггетсы + Соус Кетчуп Томатный + Соус Сырный по купону 5567',
+		]);
 
-		$map = [
-            'address' => "Комсомольский просп., 18, Красноярск",
-            'phone' => "8 (960) 759-74-46",
-            'working_time' => "05:00 - 01:00",
-        ];
-		$map2 = [
-            'address' => "ул. 9 Мая, 62, Красноярск",
-            'phone' => "8 (960) 759-74-46",
-            'working_time' => "05:00 - 01:00",
-        ];
-		$map3 = [
-            'address' => "ул. 9 Мая, 77, Красноярск",
-            'phone' => "8 (960) 759-74-46",
-            'working_time' => "05:00 - 01:00",
-        ];
-		$map4 = [
-            'address' => "Сибирский пер., 5А, Красноярск",
-            'phone' => "8 (960) 759-74-46",
-            'working_time' => "05:00 - 01:00",
-        ];
-		Restourants::factory(1)->create($map);
-		Restourants::factory(1)->create($map2);
-		Restourants::factory(1)->create($map3);
-		Restourants::factory(1)->create($map4);
+		
     }
 }

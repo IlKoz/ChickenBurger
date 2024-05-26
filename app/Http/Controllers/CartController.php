@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restourants;
 use Illuminate\Http\Request;
 use App\Models\Tovar;
 
@@ -11,8 +12,9 @@ class CartController extends Controller
 	{
 		$totalPrice = $this->getTotalPrice();
 		$totalPriceCoupons = $this->getTotalPriceCoupons();
+		$restourants = Restourants::all();
 
-		return view('user.cart', compact('totalPrice', 'totalPriceCoupons'));
+		return view('user.cart', compact('totalPrice', 'totalPriceCoupons', 'restourants'));
 	}
 
     public function create(Request $request)
